@@ -3,8 +3,9 @@ get '/decks' do
   erb :'/decks/index'
 end
 
-get '/decks/:id' do
-  @deck = Deck.find(params[:id])
+
+get '/decks/:deck_id/cards/:card_id' do
+  @deck = Deck.find(params[:deck_id])
   all_cards = @deck.cards.all
   @current_card = all_cards.sample
   erb :'/decks/show'

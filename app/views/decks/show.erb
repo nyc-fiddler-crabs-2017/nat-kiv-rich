@@ -10,8 +10,8 @@
 
 <% if @correct %>
 <h5>Congrats! That is correct</h5>
-<% elsif @correct = false %>
+<% elsif @correct == false %>
   <h5>Sorry, the correct answer is <%= @current_card.answer %></h5>
 <%end %>
 
-<a href='/decks/@current_card.id + 1'>next</a>
+<a href='/decks/<%=@current_card.deck_id%>/cards/<%=@current_card.id%>' + 1 >next</a>

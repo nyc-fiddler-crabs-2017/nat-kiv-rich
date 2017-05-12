@@ -4,4 +4,8 @@ class Card < ApplicationRecord
 
   validates :question, :answer, presence: true
   validates :question, uniqueness: true
+
+  def correct?(guess)
+    self.answer == guess
+  end
 end

@@ -23,12 +23,20 @@
       <nav class="clearfix mar-b-1">
         <ul class="no-bullets no-margin no-padding right">
           <li class="pipe-separate t-light-green left"><a href="/">home</a></li>
+
+            <% if logged_in?%>
+            <li class="pipe-separate t-light-green left"><a href="/users/<%=current_user.id%>"><%=current_user.username%></a></li>
+            <li class="pipe-separate t-light-green left"><a href="/logout">log out</a></li>
+
+            <% else %>
             <li class="pipe-separate t-light-green left"><a href="/register/new">register</a></li>
-              <li class="pipe-separate t-light-green left"><a href="/login">login</a></li>
+            <li class="pipe-separate t-light-green left"><a href="/login">login</a></li>
+            <% end %>
         </ul>
       </nav>
       <div class="logo-container">
         <h1>Flashest-Cardest-Everest</h1>
+        <img src="https://d1v8u1ev1s9e4n.cloudfront.net/553f394d067d7b16d314af58" style="width:200px">
       </div>
     </div>
   </header>

@@ -1,0 +1,17 @@
+<h1><%= @current_card.question %> </h1>
+
+<form action='/decks/<%=@current_card.deck_id%>/cards/<%=@current_card.id%>' method='post'>
+  <label for='answer', name='Guess'>
+  <input type='text', name='answer', placeholder='Guess'>
+  <input type="hidden" name= 'id' value='<%= @current_card.id %>'>
+  <input type='submit', value='Answer!'>
+
+</form>
+
+<% if @correct %>
+<h5>Congrats! That is correct</h5>
+<a href='/decks/<%=@current_card.deck_id%>/cards/<%=@current_card.id%>'>next</a>
+<% elsif @correct == false %>
+  <h5>Sorry, the correct answer is <%= @current_card.answer %></h5>
+  <a href='/decks/<%=@current_card.deck_id%>/cards/<%=@current_card.id%>'>next</a>
+<%end %>

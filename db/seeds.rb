@@ -42,7 +42,7 @@ capital.cards.create([
   {question: "What is the capital of Conneticut" , answer: "Hartford"}
 ])
 
-capital.cards.create([
+math.cards.create([
   {question: "What is 2 * 11?" , answer: "22"},
   {question: "What is 24 / 6?" , answer: "4"},
   {question: "What is 110 /11?" , answer: "10"},

@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Flashcard Decks</h3>
+  <ul>
+    <% @decks.each_slice(3) do |row| %>
+        <% row.each do |deck| %>
+        <%=deck.category%>
+        <% end %>
+    <%end%>
+  </ul>
+</div>
